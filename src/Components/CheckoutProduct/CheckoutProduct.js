@@ -1,15 +1,16 @@
 import React from 'react'
-import './Product.css'
+import './CheckoutProduct.css';
 import { useStateValue } from '../../StateProvider'
+const tag = '[CheckoutProduct]';
 
-function Product({id, title, image, price, rating}) {
 
+function CheckoutProduct({id, title, image, price, rating}) {
     const [{basket}, dispatch] = useStateValue(); 
 
-    const addToBasket= () => {
+    const deleteFromBasket= () => {
         //dispatch the items into the data layer
         dispatch({
-            type : 'ADD_TO_BASKET',
+            type : 'DELETE_FROM_BASKET',
             item: {
                 id : id,
                 title : title,
@@ -21,25 +22,28 @@ function Product({id, title, image, price, rating}) {
     }
 
     return (
-        <div className="product">
-            <div className="product__info">
-                <p>{title}</p>
-                <p className="product__price">
+        <div className="checkoutproduct">
+            <img className="checkoutproduct__image" src={image}/>
+            
+            <div className="checkoutproduct__info">
+                <p className="checkoutproduct__title">{title}</p>
+                <p className="checkoutproduct__price">
                     <small>$</small>
                     <strong>{price}</strong>
                 </p>
-                <div className="product__rating">
+                <div className="checkoutproduct__rating">
                     {Array(rating)
                         .fill()
                         .map(() => (
                             <p>⭐️</p>
                         ))}
                 </div>
+
+                <button onClick={deleteFromBasket}>Remove From basket</button>
             </div>
-            <img src={image}/>
-            <button onClick={addToBasket}>Add to Basket</button>
+            
         </div>
     )
 }
 
-export default Product
+export default CheckoutProduct
