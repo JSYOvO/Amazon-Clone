@@ -6,7 +6,7 @@ import { useStateValue } from '../../StateProvider';
 const tag = "[Checkout]";
 function Checkout() {
 
-    const [{basket}, dispatch] = useStateValue(); 
+    const [{basket, user}, dispatch] = useStateValue(); 
 
     return (
         <div className= "checkout">
@@ -16,6 +16,7 @@ function Checkout() {
                     src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg" 
                 />
                 <div>
+                    <h3>Hello, {user?.email}</h3>
                     <h2 className="checkout__title">
                         Your Shoppong Basket
                     </h2>
