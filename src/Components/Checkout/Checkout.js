@@ -3,6 +3,7 @@ import Subtotal from '../Subtotal/Subtotal.js';
 import CheckoutProduct from '../CheckoutProduct/CheckoutProduct.js';
 import './Checkout.css';
 import { useStateValue } from '../../StateProvider';
+
 const tag = "[Checkout]";
 function Checkout() {
 
