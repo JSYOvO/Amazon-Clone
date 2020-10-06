@@ -6,9 +6,12 @@ I ran a Amazon clone with React.
         ReactJS + Hooks
         React Context Api
         Material UI
+        Firebase Hosting, Firestore Database, Authentication
+    
+    BACKEND
+        NodeJS + Express Server
+        Firebase Functions
 
-    HOSTING
-        Firebase(Firestore Database / Authentication)
 
 #### Demo
-https://clone-31f17.web.app/checkout
+https://clone-31f17.web.app
